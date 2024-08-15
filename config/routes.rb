@@ -3,7 +3,11 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
 
-  resource :user, only: %i[show edit update destroy]
+  resource :user, only: %i[show edit update destroy] do
+    resources :tasks
+  end
+
+  resources :tasks, only: %i[update destroy create]
 
   root to: "home#index"
 end

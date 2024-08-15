@@ -1,0 +1,12 @@
+<div>
+  <h1 class="text-center">タスクの編集</h1>
+
+  <%= render "form", task: @task %>
+  
+  <br>
+  
+  <div class="text-center m-3">
+    <%= link_to "このタスクを見てみる", user_task_path(@task) %> |
+    <%= link_to "タスク一覧へ戻る", user_tasks_path %>
+  </div>
+</div>

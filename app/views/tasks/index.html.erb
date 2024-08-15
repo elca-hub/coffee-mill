@@ -1,0 +1,36 @@
+<div class="">
+  <h1 class="text-center">タスク一覧</h1>
+
+  <div>
+    <% if @tasks.length > 0 %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">タイトル</th>
+          <th scope="col">所要時間(h)</th>
+          <th scope="col">理由</th>
+          <th scope="col">詳細</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tasks.each do |task| %>
+          <tr>
+            <th scope="row"><%= task.id %></th>
+            <td><%= task.title %></td>
+            <td><%= task.hour %></td>
+            <td><%= task.reason %></td>
+            <td><%= link_to "詳細", user_task_path(task), class: "btn btn-outline-primary" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% else %>
+      <h3 class="text-center">タスクはありません。</h3>
+      <p class="text-center">良き休暇を！</p>
+    <% end %>
+  
+  <div class="text-center">
+    <%= link_to "新しくタスクを作成する", new_user_task_path, class: "btn btn-outline-primary" %>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 <div class="text-center">
   <h1>ようこそ、<%= @user.name %>さん！</h1>
 
+  <%= link_to "タスク一覧", user_tasks_path, class: "btn btn-primary m-3" %>
+
   <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-warning m-3" %>
 </div>
