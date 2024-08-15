@@ -1,0 +1,25 @@
+<div>
+  <h1 class="text-center"><%= @task.title %></h1>
+
+  <%= render "section", title: "タイトル", content: @task.title %>
+  <%= render "section", title: "所要時間", content: @task.hour.to_s + "時間" %>
+  <%= render "section", title: "理由", content: @task.reason %>
+  <%= render "section", title: "取り掛かる前の状態", content: @task.before_situation %>
+  <%= render "section", title: "取り掛かった後の状態", content: @task.after_situation %>
+  <%= render "section", title: "取り掛かった後のアクション", content: @task.after_action %>
+  <%= render "section", title: "その他", content: @task.other %>
+
+  <div class="container">
+    <div class="row m-3">
+      <div class="col text-center">
+        <%= link_to "編集", edit_user_task_path(@task), class: "btn btn-outline-warning" %>
+      </div>
+      <div class="col text-center">
+        <%= button_to "削除", user_task_path(@task), method: :delete, class: "btn btn-outline-danger" %>
+      </div>
+      <div class="col text-center">
+        <%= link_to "一覧へ", user_tasks_path, class: "btn btn-outline-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
