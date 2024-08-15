@@ -25,3 +25,8 @@
   justify-content: flex-end;
   pointer-events: none;
 }
+
+.field_with_errors {
+  display: inline;
+  color: red;
+}

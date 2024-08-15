@@ -20,10 +20,12 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.user = current_user
 
+    # バリデーションに引っかかった場合
     if @task.save
       redirect_to user_task_path(@task), notice: "Task was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      flash.now[:alert] = @task.errors.full_messages
+      render :new
     end
   end
 
@@ -32,6 +34,7 @@ class TasksController < ApplicationController
     if @task.update(task_params)
       redirect_to user_task_path(@task), notice: "Task was successfully updated."
     else
+      flash.now[:alert] = @task.errors.full_messages
       render :edit, status: :unprocessable_entity
     end
   end
