@@ -1,0 +1,5 @@
+<div class="text-center">
+  <h1>ようこそ、<%= @user.name %>さん！</h1>
+
+  <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-warning m-3" %>
+</div>

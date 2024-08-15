@@ -14,9 +14,12 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+      <%= yield %>
+    </div>
   </body>
 </html>

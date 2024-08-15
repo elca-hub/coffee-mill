@@ -50,3 +50,9 @@ group :development do
   gem "web-console"
 end
 
+gem "devise"
+
+# bootstrap関係
+gem "bootstrap", "~> 5.3.0"
+gem "jquery-rails"
+gem "sassc-rails"
