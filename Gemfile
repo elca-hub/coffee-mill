@@ -51,3 +51,8 @@ group :development do
 end
 
 gem "devise"
+
+# bootstrap関係
+gem "bootstrap", "~> 5.3.0"
+gem "jquery-rails"
+gem "sassc-rails"
