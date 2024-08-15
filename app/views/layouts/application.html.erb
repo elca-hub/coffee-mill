@@ -21,5 +21,20 @@
     <div class="d-flex align-items-center justify-content-center pt-4" style="min-height: 100vh;">
       <%= yield %>
     </div>
+
+    <div class="toast-container position-absolute bottom-0 end-0 mb-4 me-4">
+
+    <% if flash[:notice] %>
+      <%= render "layouts/toast", content: flash[:notice], is_danger: false %>
+    <% end %>
+    <% if flash[:alert] %>
+      <%= render "layouts/toast", content: flash[:alert], is_danger: true %>
+    <% end %>
+    <% if defined? resource %>
+      <% resource.errors.full_messages.each do |message| %>
+        <%= render "layouts/toast", content: message, is_danger: true %>
+      <% end %>
+    <% end %>
+    </div>
   </body>
 </html>

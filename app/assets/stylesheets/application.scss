@@ -15,3 +15,13 @@
  */
 
 @import "bootstrap";
+
+.flash-wrap {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
