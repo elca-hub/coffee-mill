@@ -6,32 +6,39 @@
   <div class="mb-3 row">
     <div class="col-8">
       <%= form.label :title, class: "form-label" %>
+      <span class="badge badge-danger text-bg-danger my-1">必須</span>
       <%= form.text_field :title, class: "form-control" %>
     </div>
   
     <div class="col-4">
       <%= form.label :hour, class: "form-label" %>
+      <span class="badge badge-danger text-bg-danger">必須</span>
       <%= form.number_field :hour, class: "form-control" %>
+      <div class="form-text">単位:h</div>
     </div>
   </div>
 
   <div class="mb-3">
     <%= form.label :reason, class: "form-label" %>
+    <span class="badge badge-danger text-bg-danger">必須</span>
     <%= form.text_area :reason, class: "form-control" %>
   </div>
 
   <div class="mb-3">
     <%= form.label :before_situation, class: "form-label" %>
+    <span class="badge badge-danger text-bg-danger">必須</span>
     <%= form.text_area :before_situation, class: "form-control" %>
   </div>
 
   <div class="mb-3">
     <%= form.label :after_situation, class: "form-label" %>
+    <span class="badge badge-danger text-bg-danger">必須</span>
     <%= form.text_area :after_situation, class: "form-control" %>
   </div>
 
   <div class="mb-3">
     <%= form.label :after_action, class: "form-label" %>
+    <span class="badge badge-danger text-bg-danger">必須</span>
     <%= form.text_area :after_action, class: "form-control" %>
   </div>
 

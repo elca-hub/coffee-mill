@@ -25,7 +25,7 @@ class TasksController < ApplicationController
       redirect_to user_task_path(@task), notice: "Task was successfully created."
     else
       flash.now[:alert] = @task.errors.full_messages
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
