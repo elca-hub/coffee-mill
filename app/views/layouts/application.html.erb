@@ -9,7 +9,6 @@
 
     <%= yield :head %>
 
-    <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
@@ -23,12 +22,17 @@
     </div>
 
     <div class="toast-container position-absolute bottom-0 end-0 mb-4 me-4">
-
     <% if flash[:notice] %>
       <%= render "layouts/toast", content: flash[:notice], is_danger: false %>
     <% end %>
     <% if flash[:alert] %>
-      <%= render "layouts/toast", content: flash[:alert], is_danger: true %>
+      <% if flash[:alert].instance_of?(Array) %>
+        <% flash[:alert].each do |message| %>
+          <%= render "layouts/toast", content: message, is_danger: true %>
+        <% end %>
+      <% else %>
+        <%= render "layouts/toast", content: flash[:alert], is_danger: true %>
+      <% end %>
     <% end %>
     <% if defined? resource %>
       <% resource.errors.full_messages.each do |message| %>
