@@ -104,6 +104,7 @@ GEM
     execjs (2.9.1)
     ffi (1.17.0-aarch64-linux-gnu)
     ffi (1.17.0-x86_64-darwin)
+    ffi (1.17.0-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.5)
@@ -153,6 +154,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.16.7-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.26.2)
     parser (3.3.4.2)
@@ -161,7 +164,7 @@ GEM
     popper_js (2.11.8)
     psych (5.1.2)
       stringio
-    puma (6.4.2)
+    puma (6.4.3)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.7)
@@ -290,6 +293,7 @@ GEM
 PLATFORMS
   aarch64-linux
   x86_64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
